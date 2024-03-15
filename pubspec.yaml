@@ -10,5 +10,7 @@ dependencies:
   rolemissions:
     git:
       url: https://github.com/Rodsevich/rolemissions
+
   escuelas_commons:
-    path: ../escuelas_commons
+    git:
+      url: https://github.com/juanjosegarcia98/escuelas_commons
