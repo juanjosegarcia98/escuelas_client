@@ -77,6 +77,45 @@ import 'version_db.dart' as _i64;
 import 'vista_general/vista_general_asignatura.dart' as _i65;
 import 'vista_general/vista_general_comision.dart' as _i66;
 import 'protocol.dart' as _i67;
+import 'package:escuelas_client/src/protocol/curso/asignatura.dart' as _i68;
+import 'package:escuelas_client/src/protocol/asistencia/asistencia_diaria.dart'
+    as _i69;
+import 'package:escuelas_client/src/protocol/calificacion/calificacion.dart'
+    as _i70;
+import 'package:escuelas_client/src/protocol/calificacion/concepto_calificacion.dart'
+    as _i71;
+import 'package:escuelas_client/src/protocol/calificacion/calificacion_mensual.dart'
+    as _i72;
+import 'package:escuelas_client/src/protocol/vista_general/vista_general_comision.dart'
+    as _i73;
+import 'package:escuelas_client/src/protocol/curso/comision_de_curso.dart'
+    as _i74;
+import 'package:escuelas_client/src/protocol/curso/dto/comision_con_asignatura.dart'
+    as _i75;
+import 'package:escuelas_client/src/protocol/curso/dto/supervision_de_curso.dart'
+    as _i76;
+import 'package:escuelas_client/src/protocol/curso/dto/estado_calificacion_mensual_asignatura.dart'
+    as _i77;
+import 'package:escuelas_client/src/protocol/notificacion/hilo_de_notificacion.dart'
+    as _i78;
+import 'package:escuelas_client/src/protocol/curso/curso.dart' as _i79;
+import 'package:escuelas_client/src/protocol/plantilla.dart' as _i80;
+import 'package:escuelas_client/src/protocol/rol.dart' as _i81;
+import 'package:escuelas_client/src/protocol/solicitud/solicitud.dart' as _i82;
+import 'package:escuelas_client/src/protocol/solicitud/solicitud_calificacion_mensual.dart'
+    as _i83;
+import 'package:escuelas_client/src/protocol/solicitud/solicitudes_comision_mensual.dart'
+    as _i84;
+import 'package:escuelas_client/src/protocol/solicitud/solicitud_envio_notificacion.dart'
+    as _i85;
+import 'package:escuelas_client/src/protocol/usuario/usuario_pendiente.dart'
+    as _i86;
+import 'package:escuelas_client/src/protocol/curso/asignatura_solicitada.dart'
+    as _i87;
+import 'package:escuelas_client/src/protocol/curso/relacion_comision_usuario.dart'
+    as _i88;
+import 'package:escuelas_client/src/protocol/usuario/usuario.dart' as _i89;
+import 'package:serverpod_auth_client/serverpod_auth_client.dart' as _i90;
 export 'asistencia/asistencia_diaria.dart';
 export 'asistencia/estado_asistencia.dart';
 export 'asistencia/informacion_inasistencias_estudiante_mes_anio.dart';
@@ -768,6 +807,137 @@ class Protocol extends _i1.SerializationManager {
           .map((e) => deserialize<_i67.AsignaturaOverview>(e))
           .toList() as dynamic;
     }
+    if (t == List<_i68.Asignatura>) {
+      return (data as List).map((e) => deserialize<_i68.Asignatura>(e)).toList()
+          as dynamic;
+    }
+    if (t == List<int>) {
+      return (data as List).map((e) => deserialize<int>(e)).toList() as dynamic;
+    }
+    if (t == List<_i69.AsistenciaDiaria>) {
+      return (data as List)
+          .map((e) => deserialize<_i69.AsistenciaDiaria>(e))
+          .toList() as dynamic;
+    }
+    if (t == List<_i70.Calificacion>) {
+      return (data as List)
+          .map((e) => deserialize<_i70.Calificacion>(e))
+          .toList() as dynamic;
+    }
+    if (t == List<_i71.ConceptoCalificacion>) {
+      return (data as List)
+          .map((e) => deserialize<_i71.ConceptoCalificacion>(e))
+          .toList() as dynamic;
+    }
+    if (t == List<_i72.CalificacionMensual>) {
+      return (data as List)
+          .map((e) => deserialize<_i72.CalificacionMensual>(e))
+          .toList() as dynamic;
+    }
+    if (t == List<_i73.ComisionOverview>) {
+      return (data as List)
+          .map((e) => deserialize<_i73.ComisionOverview>(e))
+          .toList() as dynamic;
+    }
+    if (t == _i1.getType<List<int>?>()) {
+      return (data != null
+          ? (data as List).map((e) => deserialize<int>(e)).toList()
+          : null) as dynamic;
+    }
+    if (t == _i1.getType<List<int>?>()) {
+      return (data != null
+          ? (data as List).map((e) => deserialize<int>(e)).toList()
+          : null) as dynamic;
+    }
+    if (t == _i1.getType<List<int>?>()) {
+      return (data != null
+          ? (data as List).map((e) => deserialize<int>(e)).toList()
+          : null) as dynamic;
+    }
+    if (t == _i1.getType<List<int>?>()) {
+      return (data != null
+          ? (data as List).map((e) => deserialize<int>(e)).toList()
+          : null) as dynamic;
+    }
+    if (t == List<_i74.ComisionDeCurso>) {
+      return (data as List)
+          .map((e) => deserialize<_i74.ComisionDeCurso>(e))
+          .toList() as dynamic;
+    }
+    if (t == List<_i75.ComisionConAsignaturas>) {
+      return (data as List)
+          .map((e) => deserialize<_i75.ComisionConAsignaturas>(e))
+          .toList() as dynamic;
+    }
+    if (t == List<_i76.SupervisionDeCurso>) {
+      return (data as List)
+          .map((e) => deserialize<_i76.SupervisionDeCurso>(e))
+          .toList() as dynamic;
+    }
+    if (t == List<_i77.EstadoCalificacionesAsignatura>) {
+      return (data as List)
+          .map((e) => deserialize<_i77.EstadoCalificacionesAsignatura>(e))
+          .toList() as dynamic;
+    }
+    if (t == List<_i78.HiloDeNotificaciones>) {
+      return (data as List)
+          .map((e) => deserialize<_i78.HiloDeNotificaciones>(e))
+          .toList() as dynamic;
+    }
+    if (t == List<_i79.Curso>) {
+      return (data as List).map((e) => deserialize<_i79.Curso>(e)).toList()
+          as dynamic;
+    }
+    if (t == List<_i80.PlantillaComunicacion>) {
+      return (data as List)
+          .map((e) => deserialize<_i80.PlantillaComunicacion>(e))
+          .toList() as dynamic;
+    }
+    if (t == List<_i81.Rol>) {
+      return (data as List).map((e) => deserialize<_i81.Rol>(e)).toList()
+          as dynamic;
+    }
+    if (t == List<_i82.Solicitud>) {
+      return (data as List).map((e) => deserialize<_i82.Solicitud>(e)).toList()
+          as dynamic;
+    }
+    if (t == List<_i83.SolicitudCalificacionMensual>) {
+      return (data as List)
+          .map((e) => deserialize<_i83.SolicitudCalificacionMensual>(e))
+          .toList() as dynamic;
+    }
+    if (t == List<_i84.SolicitudesComisionMensual>) {
+      return (data as List)
+          .map((e) => deserialize<_i84.SolicitudesComisionMensual>(e))
+          .toList() as dynamic;
+    }
+    if (t == List<_i85.SolicitudEnvioNotificacion>) {
+      return (data as List)
+          .map((e) => deserialize<_i85.SolicitudEnvioNotificacion>(e))
+          .toList() as dynamic;
+    }
+    if (t == List<_i86.UsuarioPendiente>) {
+      return (data as List)
+          .map((e) => deserialize<_i86.UsuarioPendiente>(e))
+          .toList() as dynamic;
+    }
+    if (t == List<_i87.AsignaturaSolicitada>) {
+      return (data as List)
+          .map((e) => deserialize<_i87.AsignaturaSolicitada>(e))
+          .toList() as dynamic;
+    }
+    if (t == List<_i88.RelacionComisionUsuario>) {
+      return (data as List)
+          .map((e) => deserialize<_i88.RelacionComisionUsuario>(e))
+          .toList() as dynamic;
+    }
+    if (t == List<_i89.Usuario>) {
+      return (data as List).map((e) => deserialize<_i89.Usuario>(e)).toList()
+          as dynamic;
+    }
+    try {
+      return _i90.Protocol().deserialize<T>(data, t);
+    } on _i1.DeserializationTypeNotFoundException catch (_) {}
     return super.deserialize<T>(data, t);
   }
 
@@ -969,6 +1139,10 @@ class Protocol extends _i1.SerializationManager {
     }
     if (data is _i66.ComisionOverview) {
       return 'ComisionOverview';
+    }
+    className = _i90.Protocol().getClassNameForObject(data);
+    if (className != null) {
+      return 'serverpod_auth.$className';
     }
     return null;
   }
@@ -1172,6 +1346,10 @@ class Protocol extends _i1.SerializationManager {
     }
     if (data['className'] == 'ComisionOverview') {
       return deserialize<_i66.ComisionOverview>(data['data']);
+    }
+    if (data['className'].startsWith('serverpod_auth.')) {
+      data['className'] = data['className'].substring(15);
+      return _i90.Protocol().deserializeByClassName(data);
     }
     return super.deserializeByClassName(data);
   }
